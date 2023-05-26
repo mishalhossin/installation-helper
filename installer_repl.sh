@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Welcome message with ASCII art
 echo "Welcome to the Discord AI Chatbot installation script!"
@@ -40,11 +40,6 @@ export DISCORD_TOKEN=$discord_token
 echo "Environment variables set!"
 echo ""
 
-# Change directory to the correct location
-cd "path/to/main.py"  # Replace "path/to/main.py" with the actual path to your main.py file
-echo "Changed directory to the correct location!"
-echo ""
-
 # Run the bot
 echo "Running the Discord AI Chatbot..."
-python main.py
+nix-shell --run "python main.py"
