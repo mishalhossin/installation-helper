@@ -9,14 +9,6 @@ echo ""
 echo "This script will guide you through the installation process."
 echo ""
 
-# Check if main.py already exists and delete it if necessary
-if [ -f main.py ]; then
-    echo "Deleting existing main.py..."
-    rm main.py
-    echo "Existing main.py deleted!"
-    echo ""
-fi
-
 # Clone the repository
 echo "Cloning the Discord AI Chatbot repository..."
 git clone https://github.com/mishalhossin/Discord-AI-Chatbot .
