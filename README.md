@@ -19,4 +19,4 @@ iex ((Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/mishalhossin/ins
 curl -sSfL https://raw.githubusercontent.com/mishalhossin/installation-helper/main/installer.sh | bash
 ```
 ## Replit
-Replit dosent work :(
+Replit dosent work with auto installer :(
