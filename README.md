@@ -1,20 +1,19 @@
-# Installation-helper
-This repo has batch, powershell and shell code that installs https://github.com/mishalhossin/Discord-AI-Chatbot
+# Installation Helper
 
-### Windows
-If use Windows this script assumes that you have `git` and `python`and If you dont then it will use `winget` package manager to install `git` and `python`
-if you dont have `winget` look at this [article](https://pureinfotech.com/install-winget-windows-11/)
-#### Powershell :
-```
+This repository contains batch, PowerShell, and shell code that installs the [Discord-AI-Chatbot](https://github.com/mishalhossin/Discord-AI-Chatbot) project.
+
+## Windows
+If you are using Windows, the installation script assumes that you have `git` and `python` installed. If they are not present, the script will use the `winget` package manager to install them. If you don't have `winget` installed, you can refer to this [article](https://pureinfotech.com/install-winget-windows-11/) for instructions on how to install it.
+powershell :
+```powershell
 iex ((Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/mishalhossin/installation-helper/main/installer.ps1').Content)
 ```
-#### Batch (CMD):
-```
+batch :
+```batch
 powershell -command "Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/mishalhossin/installation-helper/main/installer.bat'))"
 ```
-
-### Linux
-#### Bash :
-```
+## Linux
+bash :
+```bash
 curl -sSfL https://raw.githubusercontent.com/mishalhossin/installation-helper/main/installer.sh | bash
 ```
