@@ -1,47 +1,40 @@
-#!/bin/bash
-
-# Define colors
-BLUE='\033[0;34m'
-NC='\033[0m'
-
 # Welcome message with ASCII art
-echo -e "${BLUE}Welcome to the Discord AI Chatbot installation script!"
-echo ""
-echo -e "${BLUE}   █ █▄░█ █▀ ▀█▀ ▄▀█ █░░ █░░ █▀▀ █▀█"
-echo -e "${BLUE}   █ █░▀█ ▄█ ░█░ █▀█ █▄▄ █▄▄ ██▄ █▀▄${NC}"
-echo ""
-echo -e "${BLUE}This script will guide you through the installation process."
-echo ""
+Write-Host "Welcome to the Discord AI Chatbot installation script!"
+Write-Host ""
+Write-Host "   █ █▄░█ █▀ ▀█▀ ▄▀█ █░░ █░░ █▀▀ █▀█"
+Write-Host "   █ █░▀█ ▄█ ░█░ █▀█ █▄▄ █▄▄ ██▄ █▀▄"
+Write-Host ""
+Write-Host "This script will guide you through the installation process."
+Write-Host ""
 
 # Clone the repository
-echo -e "${BLUE}Cloning the Discord AI Chatbot repository..."
+Write-Host "Cloning the Discord AI Chatbot repository..."
 git clone https://github.com/mishalhossin/Discord-AI-Chatbot
-echo "Cloning complete!"
-echo ""
+Write-Host "Cloning complete!"
+Write-Host ""
 
 # Change directory to the cloned repository
-echo -e "${BLUE}Changing directory to Discord-AI-Chatbot..."
-cd Discord-AI-Chatbot
-echo "Directory changed!"
-echo ""
+Write-Host "Changing directory to Discord-AI-Chatbot..."
+Set-Location -Path "Discord-AI-Chatbot"
+Write-Host "Directory changed!"
+Write-Host ""
 
 # Prompt user for Discord bot token
-echo -e "${BLUE}Please provide your Discord bot token."
-read -p "Discord Bot Token: " discord_token
-echo ""
+Write-Host "Please provide your Discord bot token."
+$discord_token = Read-Host "Discord Bot Token"
+Write-Host ""
 
 # Prompt user for Hugging Face access token
-echo -e "${BLUE}Please provide your Hugging Face access token."
-read -p "Hugging Face Access Token: " hf_access_token
-echo ""
+Write-Host "Please provide your Hugging Face access token."
+$hf_access_token = Read-Host "Hugging Face Access Token"
+Write-Host ""
 
 # Create .env file with Discord bot token and Hugging Face access token
-echo -e "${BLUE}Creating .env file..."
-echo "HUGGING_FACE_API=$hf_access_token" > .env
-echo "DISCORD_TOKEN=$discord_token" >> .env
-echo ".env file created!"
-echo ""
+Write-Host "Creating .env file..."
+"`nHUGGING_FACE_API=$hf_access_token`nDISCORD_TOKEN=$discord_token" | Out-File -FilePath ".env" -Encoding UTF8
+Write-Host ".env file created!"
+Write-Host ""
 
 # Run the bot
-echo -e "${BLUE}Running the Discord AI Chatbot..."
+Write-Host "Running the Discord AI Chatbot..."
 python main.py
