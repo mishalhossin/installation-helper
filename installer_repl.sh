@@ -9,10 +9,22 @@ echo ""
 echo "This script will guide you through the installation process."
 echo ""
 
-# Clone the repository
+# Create a temporary directory
+tmp_dir=$(mktemp -d)
+
+# Clone the repository into the temporary directory
 echo "Cloning the Discord AI Chatbot repository..."
-git clone https://github.com/mishalhossin/Discord-AI-Chatbot .
+git clone --single-branch --no-checkout https://github.com/mishalhossin/Discord-AI-Chatbot "$tmp_dir"
+git -C "$tmp_dir" sparse-checkout init --cone
+git -C "$tmp_dir" sparse-checkout set /*
 echo "Cloning complete!"
+echo ""
+
+# Move the contents from the temporary directory to the current directory
+echo "Moving the contents to the current directory..."
+mv "$tmp_dir"/* .
+rm -rf "$tmp_dir"
+echo "Contents moved!"
 echo ""
 
 # Prompt user for Discord bot token
@@ -32,6 +44,19 @@ export DISCORD_TOKEN=$discord_token
 echo "Environment variables set!"
 echo ""
 
+# Create and activate a virtual environment
+echo "Creating and activating the virtual environment..."
+python3 -m venv env
+source env/bin/activate
+echo "Virtual environment created and activated!"
+echo ""
+
+# Install dependencies
+echo "Installing required dependencies..."
+pip install -r requirements.txt
+echo "Dependencies installed!"
+echo ""
+
 # Run the bot
 echo "Running the Discord AI Chatbot..."
-replit-nix run --exec "python main.py"
+python main.py
