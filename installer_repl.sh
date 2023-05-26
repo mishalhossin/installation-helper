@@ -42,4 +42,4 @@ echo ""
 
 # Run the bot
 echo "Running the Discord AI Chatbot..."
-nix-shell --run "python main.py"
+replit-nix run --exec "python main.py"
