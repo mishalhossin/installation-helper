@@ -18,3 +18,7 @@ iex ((Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/mishalhossin/ins
 ```bash
 curl -sSfL https://raw.githubusercontent.com/mishalhossin/installation-helper/main/installer.sh | bash
 ```
+## Replit
+```bash
+curl -sSfL https://raw.githubusercontent.com/mishalhossin/installation-helper/main/installer_repl.sh | bash
+```
