@@ -1,6 +1,6 @@
-# Installation Helper
+# Installation Guide
 
-This repository contains batch, PowerShell, and shell code that installs the [Discord-AI-Chatbot](https://github.com/mishalhossin/Discord-AI-Chatbot) project.
+Welcome to the Installation Helper! This repository provides a convenient way to install and set up the incredible [Discord-AI-Chatbot](https://github.com/mishalhossin/Discord-AI-Chatbot) project.
 
 ## Windows
 If you are using Windows, the installation script assumes that you have `git` and `python` installed. If they are not present, the script will use the `winget` package manager to install them. If you don't have `winget` installed, you can refer to this [article](https://pureinfotech.com/install-winget-windows-11/) for instructions on how to install it.
