@@ -9,6 +9,7 @@ If you are using Windows, the installation script assumes that you have `git` an
 iex ((Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/mishalhossin/installation-helper/main/installer.ps1').Content)
 ```
 ## Linux
+Most linux disto have all the stuff already installed
 #### bash :
 ```bash
 curl -sSfL https://raw.githubusercontent.com/mishalhossin/installation-helper/main/installer.sh | bash
