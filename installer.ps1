@@ -46,15 +46,9 @@ Write-Host "Please provide your Discord bot token."
 $discordToken = Read-Host "Discord Bot Token"
 Write-Host ""
 
-# Prompt user for Hugging Face access token
-Write-Host "Please provide your Hugging Face access token."
-$hfAccessToken = Read-Host "Hugging Face Access Token"
-Write-Host ""
-
 # Create .env file with Discord bot token and Hugging Face access token
 Write-Host "Creating .env file..."
 @"
-HUGGING_FACE_API=$hfAccessToken
 DISCORD_TOKEN=$discordToken
 "@ | Set-Content -Path ".env"
 Write-Host ".env file created!"
