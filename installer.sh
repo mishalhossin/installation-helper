@@ -30,14 +30,8 @@ echo "${BLUE}Please provide your Discord bot token."
 read -p "Discord Bot Token: " discord_token
 echo ""
 
-# Prompt user for Hugging Face access token
-echo "${BLUE}Please provide your Hugging Face access token."
-read -p "Hugging Face Access Token: " hf_access_token
-echo ""
-
 # Create .env file with Discord bot token and Hugging Face access token
 echo "${BLUE}Creating .env file..."
-echo "HUGGING_FACE_API=$hf_access_token" > .env
 echo "DISCORD_TOKEN=$discord_token" >> .env
 echo ".env file created!"
 echo ""
